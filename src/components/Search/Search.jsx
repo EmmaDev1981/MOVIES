@@ -3,6 +3,7 @@ import useApiCall from "../../hooks/useApiCall"
 import { setMovieSearchName } from '../Store/slices/moviesSlices'
 import {useDispatch, useSelector} from 'react-redux'
 import './Search.scss'
+import ColorBadge from '../utils/ColorBadge'
 
 function Search() {
 
@@ -31,6 +32,7 @@ function Search() {
 
   return (
     <div className='div-container-search'>
+    <ColorBadge />
       <div className="form__group field">
         <input type='input' className="form__field" id='name' autoComplete="off" placeholder='a' onChange={handleMovieSearch} value={dataCall.movieName} />
         <label htmlFor="name" className="form__label">Busca tu pelicula...</label>

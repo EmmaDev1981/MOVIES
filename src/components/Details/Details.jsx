@@ -26,16 +26,25 @@ function Details() {
                 <h1 className="postcard__title blue"> {details.Title}</h1>
                 <div className="postcard__subtitle small">
                   <time dateTime="2020-05-25 12:00:00">
-                    <i className="fas fa-calendar-alt mr-2"></i>{`Año: ${details.Year}`}
+                    <i className="fas fa-calendar-alt mr-2"></i>{`Year: ${details.Year}`}
                   </time>
                   <i className="fas fa-calendar-alt mr-2"></i>{`Director: ${details.Director}`}
                 </div>
                 <div className="postcard__bar"></div>
                 {details.Plot}
                 <ul className="postcard__tagbox">
-                  <li className="tag__item" onClick={() => navigate('/')}><i className="fas fa-tag mr-2"></i>Back</li>
-                  <li className="tag__item"><i className="fas fa-clock mr-2"></i>{`Duración: ${details.Runtime}`}</li>
-                  <li className="tag__item"><i className="fas fa-clock mr-2"></i>{`Rated: ${details.Rated}`}</li>
+                  <li className="tag__item">{`RunTime: ${details.Runtime}`}</li>
+                  <li className="tag__item">{`Rated: ${details.Rated}`}</li>
+                  <li className="tag__item">{`Released: ${details.Released}`}</li>
+                  <li className="tag__item">{`Genre: ${details.Genre}`}</li>
+                  <li className="tag__item">{`Writer: ${details.Writer}`}</li>
+                  <li className="tag__item">{`Actors: ${details.Actors}`}</li>
+                  <li className="tag__item">{`Language: ${details.Language}`}</li>
+                  <li className="tag__item">{`Country: ${details.Country}`}</li>
+                  <li className="tag__item">{`Awards: ${details.Awards}`}</li>
+                  <li className="tag__item">{`Rating: ${details.imdbRating}`}</li>
+                  <li className="tag__item">{`Type: ${details.Type}`}</li>
+                  <li className="tag__item__back" onClick={() => navigate('/')}>Back</li>
                 </ul>
               </div>
             </article>

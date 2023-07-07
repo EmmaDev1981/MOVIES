@@ -21,14 +21,8 @@ function Card({Title, Poster, Year, imdbID}) {
           </div>
           <div className="postcard__bar"></div>
           <ul className="postcard__tagbox">
-            <li className="tag__item" ><i className="fas fa-tag mr-2"></i>Favoritos</li>
-            {/* <li className="tag__item"><i className="fas fa-clock mr-2"></i>55 mins.</li> */}
-            <li className="tag__item">
-              <>
-                <Button imdbID={imdbID} />
-              </>
-
-            </li>
+            <li className="tag__item" >Favorite</li>
+            <li className="tag__item"><Button imdbID={imdbID}/></li>
           </ul>
         </div>
       </article>

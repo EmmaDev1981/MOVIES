@@ -89,7 +89,7 @@ $color: #0cf;
   display: block;
   transition: 0.2s;
   font-size: 1rem;
-  color: $gray;
+  color: #ff0000;
 }
 
 .form__field:focus {
@@ -112,14 +112,34 @@ $color: #0cf;
 .form__field{
   &:required,&:invalid { box-shadow:none; }
 }
-/* demo */
-// body {
-//   font-family: 'Poppins', sans-serif; 
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
-//   min-height: 100vh;
-//   font-size: 1.5rem;
-//   background-color:#222222;
-// }
+
+@media only screen and (max-width: 438px) {
+  .form__group {
+    width: 70%;
+    margin-left: 20px;
+  }
+
+  .form__field:focus {
+    ~ .form__label {
+      position: absolute;
+      top: 0;
+      display: block;
+      transition: 0.2s;
+      font-size: 0.4rem;
+      color: $primary;
+      font-weight:700;    
+    }
+  }
+
+  .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem !important;
+  }
+
+  .button-search {
+    font-size: 0.5rem;
+  }
+}
