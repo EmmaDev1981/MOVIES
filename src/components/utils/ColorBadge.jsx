@@ -5,17 +5,14 @@ import { useSelector } from 'react-redux';
 import {useNavigate} from 'react-router-dom'
 import useNotiStackUtil from '../../hooks/useNotiStackUtil'
 
-
-
 const ColorBadge = () => {
 
   const favItems = useSelector((state) => state.favorites.length)
   const navigate = useNavigate()
 
   const handleFavClick = () => {
-    console.log(favItems)
     if(favItems < 1) {
-      useNotiStackUtil("Nada en Favoritos...")
+      useNotiStackUtil("Nada en Favoritos...", "warning")
       return
     } else {
      navigate('./favorites')

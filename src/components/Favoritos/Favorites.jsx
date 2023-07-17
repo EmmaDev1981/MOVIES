@@ -1,4 +1,3 @@
-import useNotiStackUtil from "../../hooks/useNotiStackUtil"
 import {useDispatch, useSelector} from 'react-redux'
 import {removeFavoriteMovie} from '../Store/slices/moviesSlices'
 import Button from "../utils/Button"
@@ -13,7 +12,6 @@ function Favorites() {
 
     const handleFavoriteRemove = (id) => {
         dispatch(removeFavoriteMovie(id))
-        console.log(movies.length)
         if(movies.length <= 1) {
             navigate('/')
         }

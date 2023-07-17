@@ -4,7 +4,7 @@ import Card from "../Card/Card"
 
 function Cards({movies}) {
 
-    var mensaje = movies.Error || ""
+    let mensaje = movies.Error || ""
     if(movies.Error !== "undefined" && movies.Error === 'Too many results.') {
         mensaje = "Demasiados resultados!!"
     } else if(movies.Error !== "undefined" && movies.Error === 'Incorrect IMDb ID.'){

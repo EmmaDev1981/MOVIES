@@ -5,7 +5,6 @@ import { SnackbarProvider } from 'notistack'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Details from './components/Details/Details'
 import Favorites from './components/Favoritos/Favorites'
-import './App.css'
 
 function App() {
 

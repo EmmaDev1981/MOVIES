@@ -31,7 +31,6 @@ export const moviesSlices = createSlice({
   }
 })
 
-// Action creators are generated for each case reducer function
 export const { getAllMovies, getIdMovie, getMovieDetails, setMovieSearchName, setFavoriteMovie, removeFavoriteMovie } = moviesSlices.actions
 
 export default moviesSlices.reducer

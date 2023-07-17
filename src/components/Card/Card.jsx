@@ -1,9 +1,7 @@
 import React from 'react'
 import Button from '../utils/Button'
-import Skeleton from 'react-loading-skeleton'
 import { useDispatch, useSelector } from 'react-redux'
 import {setFavoriteMovie} from '../Store/slices/moviesSlices'
-import 'react-loading-skeleton/dist/skeleton.css'
 import useNotiStackUtil from '../../hooks/useNotiStackUtil'
 import "./Card.scss"
 
@@ -30,10 +28,10 @@ function Card({Title, Poster, Year, imdbID}) {
           <img className="postcard__img" src={Poster} alt="Image Title" />
         </a>
         <div className="postcard__text">
-          <h1 className="postcard__title blue"> {Title || <Skeleton />}</h1>
+          <h1 className="postcard__title blue"> {Title}</h1>
           <div className="postcard__subtitle small">
             <time dateTime="2020-05-25 12:00:00">
-              <i className="fas fa-calendar-alt mr-2"></i>{`Año: ${Year || <Skeleton />}`}
+              <i className="fas fa-calendar-alt mr-2"></i>{`Año: ${Year}`}
             </time>
           </div>
           <div className="postcard__bar"></div>

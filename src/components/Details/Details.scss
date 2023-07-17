@@ -8,15 +8,6 @@ $main-red-rgb-015: rgba(23, 12, 11, 0.1) !default;
 $main-blue: #0076bd !default;
 $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
 
-/* This pen */
-// body {
-// 	font-family: "Baloo 2", cursive;
-// 	font-size: 16px;
-// 	color: #ffffff;
-// 	text-rendering: optimizeLegibility;
-// 	font-weight: initial;
-// }
-
 .dark {
 	background: #341c6f;
 }
@@ -113,6 +104,10 @@ a, a:hover {
     height: 100%;
   }
 
+  .postcard__Plot {
+    text-align:justify;
+  }
+
   .postcard__tagbox {
     display: flex;
     flex-flow: row wrap;
@@ -123,7 +118,7 @@ a, a:hover {
 
     .tag__item {
       display: inline-block;
-      background: rgba(5, 4, 4, 0.4);
+      background: rgba(237, 57, 192, 0.4);
       border-radius: 3px;
       padding: 2.5px 10px;
       margin: 0 5px 5px 0;
@@ -132,7 +127,7 @@ a, a:hover {
       transition: background-color 0.3s;
 
       &:hover {
-        background: rgba(83, 83, 83, 0.8);
+        background: rgba(50, 101, 18, 0.8);
       }
     }
 

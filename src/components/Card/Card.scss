@@ -8,15 +8,6 @@ $main-red-rgb-015: rgba(23, 12, 11, 0.1) !default;
 $main-blue: #0076bd !default;
 $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
 
-/* This pen */
-// body {
-// 	font-family: "Baloo 2", cursive;
-// 	font-size: 16px;
-// 	color: #ffffff;
-// 	text-rendering: optimizeLegibility;
-// 	font-weight: initial;
-// }
-
 .dark {
 	background: #341c6f;
 }
@@ -77,6 +68,7 @@ a, a:hover {
 
   .postcard__title {
     font-size: 1.75rem;
+    margin-left: 1rem;
   }
 
   .postcard__img {

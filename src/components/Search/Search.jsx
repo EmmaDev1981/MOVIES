@@ -1,9 +1,9 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import useApiCall from "../../hooks/useApiCall"
 import { setMovieSearchName } from '../Store/slices/moviesSlices'
 import {useDispatch, useSelector} from 'react-redux'
-import './Search.scss'
 import ColorBadge from '../utils/ColorBadge'
+import './Search.scss'
 
 function Search() {
 
@@ -13,7 +13,6 @@ function Search() {
   const [dataCall, setDataCall] = useState({
     movieName: ""
   })
-  
   
   const handleMovieSearch = (e) => {
     // mejorar funcion de validar que buscan
