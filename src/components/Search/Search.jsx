@@ -9,7 +9,6 @@ function Search() {
 
   const dispatch = useDispatch()
   const movieNameSearch = useSelector((state) => state.movieSearchName )
-  console.log(movieNameSearch)
 
   const [dataCall, setDataCall] = useState({
     movieName: ""

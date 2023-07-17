@@ -6,7 +6,8 @@ export const moviesSlices = createSlice({
     movies: [],
     movieSearchName:"star wars",
     idMovie: 0,
-    movieDetails:null
+    movieDetails:null,
+    favorites: []
   },
   reducers: {
     getAllMovies: (state, action) => {
@@ -20,11 +21,17 @@ export const moviesSlices = createSlice({
     },
     setMovieSearchName: (state, action) => {
       state.movieSearchName = action.payload
+    },
+    setFavoriteMovie: (state, action) => {
+      state.favorites.push(action.payload)
+    },
+    removeFavoriteMovie: (state, action) => {
+      state.favorites = state.favorites.filter((movie) => movie.imdbID !== action.payload)
     }
   }
 })
 
 // Action creators are generated for each case reducer function
-export const { getAllMovies, getIdMovie, getMovieDetails, setMovieSearchName } = moviesSlices.actions
+export const { getAllMovies, getIdMovie, getMovieDetails, setMovieSearchName, setFavoriteMovie, removeFavoriteMovie } = moviesSlices.actions
 
 export default moviesSlices.reducer

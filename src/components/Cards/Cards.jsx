@@ -18,7 +18,7 @@ function Cards({movies}) {
                     ?
                     <div>
                         {
-                            useNotiStackUtil(mensaje)
+                            useNotiStackUtil(mensaje, "error")
                         }
                     </div>
                     :

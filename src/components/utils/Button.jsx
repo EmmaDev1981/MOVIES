@@ -10,7 +10,7 @@ function Button({imdbID}) {
 
     const handleClickDetails = (id) => {
         dispatch(getIdMovie(id))
-        navigate('./details')
+        navigate('/details')
     }
 
   return (
