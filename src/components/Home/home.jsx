@@ -5,7 +5,8 @@ import {useSelector} from "react-redux"
 
 function Home() {
 
-  const movies = useSelector((state) => state.movies)
+  const movies = useSelector((state) => state.reducer.movies)
+  console.log(movies)
   
   return (
     <>

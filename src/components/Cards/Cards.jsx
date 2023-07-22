@@ -24,7 +24,7 @@ function Cards({movies}) {
                     :
                     <div className="container-movies">
                         {
-                            movies ? movies?.Search?.map((movie, index) => {
+                            movies ? movies?.map((movie, index) => {
                                 return (
 
                                     <Card key={index} {...movie} />

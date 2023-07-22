@@ -2,10 +2,11 @@ import {useDispatch, useSelector} from 'react-redux'
 import {removeFavoriteMovie} from '../Store/slices/moviesSlices'
 import Button from "../utils/Button"
 import {useNavigate} from 'react-router-dom'
+import './Favorites.css'
 
 function Favorites() {
 
-    const movies = useSelector((state) => state.favorites)
+    const movies = useSelector((state) => state.reducer.favorites)
     const dispatch = useDispatch()
 
     const navigate = useNavigate()
@@ -15,6 +16,9 @@ function Favorites() {
         if(movies.length <= 1) {
             navigate('/')
         }
+    }
+    const handleClickAtras = () => {
+        navigate('/')
     }
 
     return (
@@ -36,6 +40,7 @@ function Favorites() {
                             <ul className="postcard__tagbox">
                                 <li className="tag__item" onClick={() => { handleFavoriteRemove(movie.imdbID) }}>Remove Favorite</li>
                                 <li className="tag__item"><Button imdbID={movie.imdbID}/></li>
+                                <li className="tag__item" onClick={handleClickAtras}>Atras</li>
                             </ul>
                         </div>
                     </article>

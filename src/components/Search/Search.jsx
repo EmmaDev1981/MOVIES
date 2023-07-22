@@ -8,7 +8,7 @@ import './Search.scss'
 function Search() {
 
   const dispatch = useDispatch()
-  const movieNameSearch = useSelector((state) => state.movieSearchName )
+  const movieNameSearch = useSelector((state) => state.reducer.movieSearchName )
 
   const [dataCall, setDataCall] = useState({
     movieName: ""

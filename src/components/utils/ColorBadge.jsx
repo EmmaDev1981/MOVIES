@@ -7,7 +7,7 @@ import useNotiStackUtil from '../../hooks/useNotiStackUtil'
 
 const ColorBadge = () => {
 
-  const favItems = useSelector((state) => state.favorites.length)
+  const favItems = useSelector((state) => state.reducer.favorites.length)
   const navigate = useNavigate()
 
   const handleFavClick = () => {
