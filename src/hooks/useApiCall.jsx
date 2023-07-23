@@ -15,8 +15,7 @@ function useApiCall(movieName, page=1) {
         try {
             const response = await axios.get(`https://www.omdbapi.com/?s=${movieName}&plot=full&page=${page}&apikey=${import.meta.env.VITE_API_KEY}`);
             setData(response.data)
-            console.log(response.data.Search)
-            dispatch(getAllMovies(response.data.Search))
+            dispatch(getAllMovies(response.data))
             setLoading(false)
         }
         catch (e) {

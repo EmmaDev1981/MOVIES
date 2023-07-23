@@ -8,7 +8,6 @@ function Favorites() {
 
     const movies = useSelector((state) => state.reducer.favorites)
     const dispatch = useDispatch()
-
     const navigate = useNavigate()
 
     const handleFavoriteRemove = (id) => {

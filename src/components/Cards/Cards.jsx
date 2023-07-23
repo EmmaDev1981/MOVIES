@@ -4,10 +4,10 @@ import Card from "../Card/Card"
 
 function Cards({movies}) {
 
-    let mensaje = movies.Error || ""
-    if(movies.Error !== "undefined" && movies.Error === 'Too many results.') {
+    let mensaje = movies?.Error || ""
+    if(movies?.Error !== "undefined" && movies?.Error === 'Too many results.') {
         mensaje = "Demasiados resultados!!"
-    } else if(movies.Error !== "undefined" && movies.Error === 'Incorrect IMDb ID.'){
+    } else if(movies?.Error !== "undefined" && movies?.Error === 'Incorrect IMDb ID.'){
         mensaje = "Nombre Incorrecto"
     }
     
@@ -24,7 +24,7 @@ function Cards({movies}) {
                     :
                     <div className="container-movies">
                         {
-                            movies ? movies?.map((movie, index) => {
+                            movies ? movies?.Search?.map((movie, index) => {
                                 return (
 
                                     <Card key={index} {...movie} />
