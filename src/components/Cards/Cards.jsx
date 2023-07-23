@@ -1,16 +1,19 @@
 import useNotiStackUtil from "../../hooks/useNotiStackUtil"
-import "./Cards.css"
 import Card from "../Card/Card"
+import Loading from "../utils/Loading"
+import "./Cards.css"
 
-function Cards({movies}) {
+function Cards({ movies }) {
 
     let mensaje = movies?.Error || ""
-    if(movies?.Error !== "undefined" && movies?.Error === 'Too many results.') {
+    if (movies?.Error !== "undefined" && movies?.Error === 'Too many results.') {
         mensaje = "Demasiados resultados!!"
-    } else if(movies?.Error !== "undefined" && movies?.Error === 'Incorrect IMDb ID.'){
+    } else if (movies?.Error !== "undefined" && movies?.Error === 'Incorrect IMDb ID.') {
         mensaje = "Nombre Incorrecto"
+    } else if (movies?.Error !== "undefined" && movies?.Error === 'Movie not found!') {
+        mensaje = "Pelicula no encontrada"
     }
-    
+
     return (
         <div className="container">
             {
@@ -31,7 +34,7 @@ function Cards({movies}) {
 
                                 )
                             }) :
-                                <p>Cargando...</p>
+                            <Loading type={"spokes"} color={"#ffffff"}/>
                         }
                     </div>
             }

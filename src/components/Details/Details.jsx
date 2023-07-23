@@ -3,16 +3,13 @@ import { useSelector } from 'react-redux'
 import {useNavigate} from 'react-router-dom'
 import useApiCallById from '../../hooks/useApiCallById'
 import Loading from '../utils/Loading'
-import Rating from '../utils/Rating/Rating'
 import './Details.scss'
 
 function Details() {
 
   const details = useSelector((state) => state.reducer.movieDetails )
   const idMovieDetails = useSelector((state) => state.reducer.idMovie)
-
   const apiCallById = useApiCallById(idMovieDetails)
-
   const navigate = useNavigate()
 
   return (
@@ -34,7 +31,6 @@ function Details() {
                 </div>
                 <div className="postcard__bar"></div>
                    <p className="postcard__Plot">{details.Plot}</p>
-                   {/* <Rating value={details.imdbRating}/> */}
                 <ul className="postcard__tagbox">
                   <li className="tag__item">{`RunTime: ${details.Runtime}`}</li>
                   <li className="tag__item">{`Rated: ${details.Rated}`}</li>
