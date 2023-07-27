@@ -2,14 +2,16 @@
 
 - [ ] ReactJS
 - [ ] Redux Slice
+- [ ] Redux-Persist
 - [ ] Custom Hooks
 - [ ] Notistack
 - [ ] React Router V6
+- [ ] Lazy Loading React
 - [ ] Material UI
 - [ ] Bootstrap 5
 - [ ] HTML / CSS
 
-Deploy: https://movies-six-rho.vercel.app/
+Deploy: movies-delta-eight.vercel.app
 
 ### Objectives
 
