@@ -7,7 +7,7 @@ import {useNavigate} from 'react-router-dom'
 
 const CompareBadge = () => {
 
-  const compItems = useSelector((state) => state.reducer.compareMovies.length)
+  const compItems = useSelector((state) => state.reducer.compareMovies?.length)
   const navigate = useNavigate()
 
   const handleCompClick = () => {
