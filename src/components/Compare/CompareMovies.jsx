@@ -252,8 +252,8 @@ export default function EnhancedTable() {
       newSelected = newSelected.concat(selected, name);
     } else if (selectedIndex === 0) {
       newSelected = newSelected.concat(selected.slice(1));
-    } else if (selectedIndex === selected.length - 1) {
-      newSelected = newSelected.concat(selected.slice(0, -1));
+    } else if (selectedIndex === selected?.length - 1) {
+      newSelected = newSelected.concat(selected?.slice(0, -1));
     } else if (selectedIndex > 0) {
       newSelected = newSelected.concat(
         selected.slice(0, selectedIndex),
@@ -289,19 +289,19 @@ export default function EnhancedTable() {
     <NavBar />
     <Box sx={{ width: '100%' }}>
       <Paper sx={{ width: '100%', backgroundColor: '#0f0821' }}>
-        <EnhancedTableToolbar numSelected={selected.length} selected={selected}/>
+        <EnhancedTableToolbar numSelected={selected?.length} selected={selected}/>
         <TableContainer >
           <Table
             aria-labelledby="tableTitle"
             size={'small'}
           >
             <EnhancedTableHead
-              numSelected={selected.length}
+              numSelected={selected?.length}
               order={order}
               orderBy={orderBy}
               onSelectAllClick={handleSelectAllClick}
               onRequestSort={handleRequestSort}
-              rowCount={rows.length}
+              rowCount={rows?.length}
             />
             <TableBody>
               {visibleRows.map((row, index) => {
@@ -355,7 +355,7 @@ export default function EnhancedTable() {
           sx={{color:'white'}}
           rowsPerPageOptions={[5, 10, 25]}
           component="div"
-          count={rows.length}
+          count={rows?.length}
           rowsPerPage={rowsPerPage}
           page={page}
           onPageChange={handleChangePage}
