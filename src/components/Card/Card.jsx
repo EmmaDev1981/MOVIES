@@ -13,8 +13,8 @@ function Card({Title, Poster, Year, imdbID}) {
   const movies = useSelector((state) => state.reducer.movies )
   const favMovies = useSelector((state) => state.reducer.favorites )
   const compMovies = useSelector((state) => state.reducer.compareMovies )
-  const idCompaSelected = compMovies.map((movie) => movie?.imdbID)
-  const idFavSelected = favMovies.map((movie) => movie?.imdbID)
+  const idCompaSelected = compMovies?.map((movie) => movie?.imdbID)
+  const idFavSelected = favMovies?.map((movie) => movie?.imdbID)
 
   const handleFavoriteAdd = async (id) => {
     if(Array.isArray(movies?.Search)){
