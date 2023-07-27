@@ -1,9 +1,9 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useDispatch} from "react-redux"
-import {getMovieDetails} from "../components/Store/slices/moviesSlices"
+import {getMovieDetails, setCompareMovies} from "../components/Store/slices/moviesSlices"
 
-function useApiCallById(imdbId) {
+function useApiCallById(imdbId, mode) {
 
     const [data, setData] = useState("")
     const [loading, setLoading] = useState(true)
@@ -15,7 +15,11 @@ function useApiCallById(imdbId) {
         try {
             const response = await axios.get(`https://www.omdbapi.com/?i=${imdbId}&plot=full&page=1&apikey=${import.meta.env.VITE_API_KEY}`);
             setData(response.data)
-            dispatch(getMovieDetails(response.data))
+            if(mode === "getMovieDetails") {
+                dispatch(getMovieDetails(response.data))
+            } else if ('mode === "setCompareMovies"') {
+                dispatch(setCompareMovies(response.data))
+            }
             setLoading(false)
         }
         catch (e) {

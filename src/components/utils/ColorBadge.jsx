@@ -15,14 +15,14 @@ const ColorBadge = () => {
       useNotiStackUtil("Nada en Favoritos...", "warning")
       return
     } else {
-     navigate('./favorites')
+     navigate('/favorites')
     }
   }
 
   return (
     <Stack spacing={2} direction="row">
       <Badge badgeContent={favItems} color="success">
-        <FavoriteIcon color="error" fontSize="large" onClick={handleFavClick}/>
+        <FavoriteIcon cursor ='pointer' color="error" fontSize="large" onClick={handleFavClick}/>
       </Badge>
     </Stack>
   );

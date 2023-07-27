@@ -13,10 +13,10 @@ function useApiCall(movieName, page=1) {
 
     async function fetchApi() {
         try {
-            const response = await axios.get(`https://www.omdbapi.com/?s=${movieName}&plot=full&page=${page}&apikey=${import.meta.env.VITE_API_KEY}`);
-            setData(response.data)
-            dispatch(getAllMovies(response.data))
-            setLoading(false)
+                const response = await axios.get(`https://www.omdbapi.com/?s=${movieName}&plot=full&page=${page}&apikey=${import.meta.env.VITE_API_KEY}`);
+                setData(response.data)
+                dispatch(getAllMovies(response.data))
+                setLoading(false)
         }
         catch (e) {
             console.error(e)

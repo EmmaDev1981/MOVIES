@@ -7,6 +7,7 @@ import { SnackbarProvider } from 'notistack'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Details from './components/Details/Details'
 import Favorites from './components/Favoritos/Favorites'
+import CompareMovies from './components/Compare/CompareMovies.jsx'
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
               <Route path='/' element={<Home />} />
               <Route path='/details' element={<Details />} />
               <Route path='/favorites' element={<Favorites />} />
+              <Route path='/compares' element={<CompareMovies />} />
             </Routes>
           </BrowserRouter>
         </SnackbarProvider>
