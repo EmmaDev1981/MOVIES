@@ -11,7 +11,7 @@
 - [ ] Bootstrap 5
 - [ ] HTML / CSS
 
-Deploy: movies-delta-eight.vercel.app
+Deploy: https://movies-delta-eight.vercel.app/
 
 ### Objectives
 
