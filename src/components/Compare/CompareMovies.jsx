@@ -40,15 +40,15 @@ function getComparator(order, orderBy) {
 }
 
 function stableSort(array, comparator) {
-  const stabilizedThis = array.map((el, index) => [el, index]);
-  stabilizedThis.sort((a, b) => {
+  const stabilizedThis = array?.map((el, index) => [el, index]);
+  stabilizedThis?.sort((a, b) => {
     const order = comparator(a[0], b[0]);
     if (order !== 0) {
       return order;
     }
     return a[1] - b[1];
   });
-  return stabilizedThis.map((el) => el[0]);
+  return stabilizedThis?.map((el) => el[0]);
 }
 
 const headCells = [
@@ -124,21 +124,21 @@ function EnhancedTableHead(props) {
             }}
           />
         </TableCell>
-        {headCells.map((headCell) => (
+        {headCells?.map((headCell) => (
           <TableCell
             sx={{color:'white'}}
-            key={headCell.id}
-            align={headCell.numeric ? 'right' : 'left'}
-            padding={headCell.disablePadding ? 'none' : 'normal'}
+            key={headCell?.id}
+            align={headCell?.numeric ? 'right' : 'left'}
+            padding={headCell?.disablePadding ? 'none' : 'normal'}
             sortDirection={orderBy === headCell.id ? order : false}
           >
             <TableSortLabel
-              active={orderBy === headCell.id}
-              direction={orderBy === headCell.id ? order : 'asc'}
-              onClick={createSortHandler(headCell.id)}
+              active={orderBy === headCell?.id}
+              direction={orderBy === headCell?.id ? order : 'asc'}
+              onClick={createSortHandler(headCell?.id)}
             >
-              {headCell.label}
-              {orderBy === headCell.id ? (
+              {headCell?.label}
+              {orderBy === headCell?.id ? (
                 <Box component="span" sx={visuallyHidden}>
                   {order === 'desc' ? 'sorted descending' : 'sorted ascending'}
                 </Box>
@@ -237,7 +237,7 @@ export default function EnhancedTable() {
 
   const handleSelectAllClick = (event) => {
     if (event.target.checked) {
-      const newSelected = rows.map((n) => n.Title);
+      const newSelected = rows?.map((n) => n.Title);
       setSelected(newSelected);
       return;
     }
@@ -245,19 +245,19 @@ export default function EnhancedTable() {
   };
 
   const handleClick = (event, name) => {
-    const selectedIndex = selected.indexOf(name);
+    const selectedIndex = selected?.indexOf(name);
     let newSelected = [];
 
     if (selectedIndex === -1) {
-      newSelected = newSelected.concat(selected, name);
+      newSelected = newSelected?.concat(selected, name);
     } else if (selectedIndex === 0) {
-      newSelected = newSelected.concat(selected.slice(1));
+      newSelected = newSelected?.concat(selected?.slice(1));
     } else if (selectedIndex === selected?.length - 1) {
-      newSelected = newSelected.concat(selected?.slice(0, -1));
+      newSelected = newSelected?.concat(selected?.slice(0, -1));
     } else if (selectedIndex > 0) {
-      newSelected = newSelected.concat(
-        selected.slice(0, selectedIndex),
-        selected.slice(selectedIndex + 1),
+      newSelected = newSelected?.concat(
+        selected?.slice(0, selectedIndex),
+        selected?.slice(selectedIndex + 1),
       );
     }
 
@@ -273,7 +273,7 @@ export default function EnhancedTable() {
     setPage(0);
   };
 
-  const isSelected = (name) => selected.indexOf(name) !== -1;
+  const isSelected = (name) => selected?.indexOf(name) !== -1;
 
   const visibleRows = React.useMemo(
     () =>
@@ -304,18 +304,18 @@ export default function EnhancedTable() {
               rowCount={rows?.length}
             />
             <TableBody>
-              {visibleRows.map((row, index) => {
-                const isItemSelected = isSelected(row.Title);
+              {visibleRows?.map((row, index) => {
+                const isItemSelected = isSelected(row?.Title);
                 const labelId = `enhanced-table-checkbox-${index}`;
 
                 return (
                   <TableRow
                     hover
-                    onClick={(event) => handleClick(event, row.Title)}
+                    onClick={(event) => handleClick(event, row?.Title)}
                     role="checkbox"
                     aria-checked={isItemSelected}
                     tabIndex={-1}
-                    key={row.Title}
+                    key={row?.Title}
                     selected={isItemSelected}
                     sx={{ cursor: 'pointer' }}
                   >

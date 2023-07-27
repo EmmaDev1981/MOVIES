@@ -18,7 +18,7 @@ function Card({Title, Poster, Year, imdbID}) {
 
   const handleFavoriteAdd = async (id) => {
     if(Array.isArray(movies?.Search)){
-      if(idFavSelected.includes(id)) return
+      if(idFavSelected?.includes(id)) return
       const movieFav = movies?.Search?.filter((movie) => movie?.imdbID === id )
       dispatch(setFavoriteMovie(movieFav[0]))
       useNotiStackUtil("Pelicula agregada a Favoritos", "success")
@@ -27,7 +27,7 @@ function Card({Title, Poster, Year, imdbID}) {
 
   const handleCompareMovie = async (id) => {
     if(Array.isArray(movies?.Search)) {
-      if(idCompaSelected.includes(id))return
+      if(idCompaSelected?.includes(id))return
       const response = await axios.get(`https://www.omdbapi.com/?i=${id}&plot=full&page=1&apikey=${import.meta.env.VITE_API_KEY}`)
       dispatch(setCompareMovies(response.data))
       useNotiStackUtil("Pelicula agregada a Comparar", "success")
