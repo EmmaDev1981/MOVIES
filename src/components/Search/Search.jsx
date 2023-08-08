@@ -1,4 +1,6 @@
 import React, {useState, useCallback} from 'react'
+import Button from '@mui/material/Button';
+import SearchIcon from '@mui/icons-material/Search';
 import useApiCall from "../../hooks/useApiCall"
 import { setMovieSearchName } from '../Store/slices/moviesSlices'
 import {useDispatch, useSelector} from 'react-redux'
@@ -48,7 +50,9 @@ function Search() {
         <label htmlFor="name" className="form__label">Busca tu pelicula...</label>
       </div>
       <div className="container-button-search">
-         <button className='button-search' onClick={handleClick}>Buscar</button>
+      <Button sx={{ color: 'red' }} variant="outlined" onClick={handleClick} startIcon={<SearchIcon style={{ color: 'red' }} />}>
+        Buscar
+      </Button>
       </div>
     </div>
 
